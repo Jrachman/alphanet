@@ -13,4 +13,4 @@ COPY ./dist/bin/$TARGETARCH/alphanet /usr/local/bin/alphanet
 ADD ./etc/alphanet-genesis.json /etc/alphanet-genesis.json
 
 EXPOSE 30303 30303/udp 9001 8545 8546 9000
-ENTRYPOINT ["/usr/local/bin/alphanet", "node", "--chain", "/etc/alphanet-genesis.json" "--dev", "--http", "--http.api", "all", "--dev.block-time", "10sec"]
+ENTRYPOINT ["/usr/local/bin/alphanet", "node", "--chain", "/etc/alphanet-genesis.json", "--dev", "--http.addr", "0.0.0.0", "--http.port", "8545", "--http", "--http.api", "all", "--dev.block-time", "3sec"]

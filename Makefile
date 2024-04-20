@@ -12,7 +12,7 @@ BIN_DIR = "dist/bin"
 PROFILE ?= release
 
 # The docker image name
-DOCKER_IMAGE_NAME ?= ghcr.io/paradigmxyz/alphanet
+DOCKER_IMAGE_NAME ?= ghcr.io/jrachman/alphanet
 
 BUILD_PATH = "target"
 
