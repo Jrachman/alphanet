@@ -1,5 +1,5 @@
 [workspace]
-members = ["bin/alphanet/", "crates/instructions", "crates/node", "crates/precompile", "crates/testing"]
+members = ["bin/alphanet/", "crates/instructions", "crates/node", "crates/precompile", "crates/testing", "examples/"]
 default-members = ["bin/alphanet/"]
 resolver = "2"
 
@@ -57,6 +57,11 @@ alloy-signer-wallet = { git = "https://github.com/alloy-rs/alloy", rev = "39b869
 # tokio
 tokio = { version = "1.21", default-features = false }
 
+# async
+async-trait = "0.1.68"
+futures = "0.3.26"
+futures-util = "0.3.25"
+
 # reth
 reth = { git = "https://github.com/paradigmxyz/reth.git", rev = "fa9f23d", features = ["optimism"] }
 reth-node-api = { git = "https://github.com/paradigmxyz/reth.git", rev = "fa9f23d" }
@@ -64,6 +69,22 @@ reth-node-core = { git = "https://github.com/paradigmxyz/reth.git", rev = "fa9f2
 reth-node-optimism = { git = "https://github.com/paradigmxyz/reth.git", rev = "fa9f23d" }
 reth-primitives = { git = "https://github.com/paradigmxyz/reth.git", rev = "fa9f23d" }
 reth-tracing = { git = "https://github.com/paradigmxyz/reth.git", rev = "fa9f23d" }
+reth-beacon-consensus = { git = "https://github.com/paradigmxyz/reth.git", rev = "fa9f23d" }
+reth-blockchain-tree = { git = "https://github.com/paradigmxyz/reth.git", rev = "fa9f23d" }
+reth-db = { git = "https://github.com/paradigmxyz/reth.git", rev = "fa9f23d" }
+reth-network = { git = "https://github.com/paradigmxyz/reth.git", rev = "fa9f23d" }
+reth-network-api = { git = "https://github.com/paradigmxyz/reth.git", rev = "fa9f23d" }
+reth-provider = { git = "https://github.com/paradigmxyz/reth.git", rev = "fa9f23d" }
+reth-revm = { git = "https://github.com/paradigmxyz/reth.git", rev = "fa9f23d" }
+reth-rpc-builder = { git = "https://github.com/paradigmxyz/reth.git", rev = "fa9f23d" }
+reth-rpc-types = { git = "https://github.com/paradigmxyz/reth.git", rev = "fa9f23d" }
+reth-rpc-types-compat = { git = "https://github.com/paradigmxyz/reth.git", rev = "fa9f23d" }
+reth-tasks = { git = "https://github.com/paradigmxyz/reth.git", rev = "fa9f23d" }
+reth-transaction-pool = { git = "https://github.com/paradigmxyz/reth.git", rev = "fa9f23d" }
+reth-node-ethereum = { git = "https://github.com/paradigmxyz/reth.git", rev = "fa9f23d" }
+reth-basic-payload-builder = { git = "https://github.com/paradigmxyz/reth.git", rev = "fa9f23d" }
+reth-ethereum-payload-builder = { git = "https://github.com/paradigmxyz/reth.git", rev = "fa9f23d" }
+reth-payload-builder = { git = "https://github.com/paradigmxyz/reth.git", rev = "fa9f23d" }
 
 # revm
 revm = { version = "8.0.0", features = ["std", "secp256k1"], default-features = false }
@@ -80,6 +101,7 @@ serde = "1.0.197"
 serde_derive = "1.0.197"
 serde_json = "1.0.115"
 tracing = "0.1.0"
+thiserror = "1.0"
 
 # misc-testing
 rstest = "0.18.2"
