@@ -12,6 +12,7 @@ categories.workspace = true
 [dependencies]
 alphanet-precompile.workspace = true
 alphanet-instructions.workspace = true
+alphanet-node.workspace = true
 reth.workspace = true
 reth-node-api.workspace = true
 reth-node-optimism.workspace = true
