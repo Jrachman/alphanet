@@ -57,6 +57,11 @@ alloy-signer-wallet = { git = "https://github.com/alloy-rs/alloy", rev = "77c124
 # tokio
 tokio = { version = "1.21", default-features = false }
 
+# async
+async-trait = "0.1.68"
+futures = "0.3.26"
+futures-util = "0.3.25"
+
 # reth
 reth = { git = "https://github.com/paradigmxyz/reth.git", rev = "a7d8da5", features = ["optimism"] }
 reth-node-api = { git = "https://github.com/paradigmxyz/reth.git", rev = "a7d8da5" }
@@ -80,6 +85,7 @@ serde = "1.0.197"
 serde_derive = "1.0.197"
 serde_json = "1.0.115"
 tracing = "0.1.0"
+thiserror = "1.0"
 
 # misc-testing
 rstest = "0.18.2"
