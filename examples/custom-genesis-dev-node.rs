@@ -11,7 +11,7 @@ use reth_node_optimism::{args::RollupArgs, OptimismNode};
 use reth_primitives::{ChainSpec, ForkCondition, ForkTimestamps, Genesis, GenesisAccount, Hardfork};
 use reth_tracing::{RethTracer, Tracer};
 use revm_primitives::{address, U256};
-use std::{sync::Arc, time::Duration};
+use std::{net::{IpAddr, Ipv4Addr}, sync::Arc, time::Duration};
 use alphanet_node::node::AlphaNetNode;
 
 #[tokio::main]
@@ -27,7 +27,12 @@ async fn main() -> eyre::Result<()> {
             block_max_transactions: None,
             block_time: Some(Duration::new(3, 0))
         })
-        .with_rpc(RpcServerArgs::default().with_http())
+        .with_rpc(RpcServerArgs {
+            http_addr: IpAddr::V4(Ipv4Addr::new(0, 0, 0, 0)),
+            ws_addr: IpAddr::V4(Ipv4Addr::new(0, 0, 0, 0)),
+            auth_addr: IpAddr::V4(Ipv4Addr::new(0, 0, 0, 0)),
+            ..RpcServerArgs::default().with_http().with_ws()
+        })
         .with_chain(custom_chain());
 
     let handle = NodeBuilder::new(node_config)
