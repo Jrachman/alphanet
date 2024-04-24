@@ -208,6 +208,58 @@ dependencies = [
 ]
 
 [[package]]
+name = "alloy-consensus"
+version = "0.1.0"
+source = "git+https://github.com/alloy-rs/alloy?rev=39b8695#39b869585955d95e9c64c3e1b66f16432ae4f132"
+dependencies = [
+ "alloy-eips 0.1.0 (git+https://github.com/alloy-rs/alloy?rev=39b8695)",
+ "alloy-primitives",
+ "alloy-rlp",
+ "alloy-serde 0.1.0 (git+https://github.com/alloy-rs/alloy?rev=39b8695)",
+ "c-kzg",
+ "serde",
+]
+
+[[package]]
+name = "alloy-consensus"
+version = "0.1.0"
+source = "git+https://github.com/alloy-rs/alloy?rev=77c1240#77c1240533b411ed0eb5533f94396eba8d7f6ab6"
+dependencies = [
+ "alloy-eips 0.1.0 (git+https://github.com/alloy-rs/alloy?rev=39b8695)",
+ "alloy-primitives",
+ "alloy-rlp",
+ "alloy-serde 0.1.0 (git+https://github.com/alloy-rs/alloy?rev=39b8695)",
+ "c-kzg",
+ "serde",
+]
+
+[[package]]
+name = "alloy-consensus"
+version = "0.1.0"
+source = "git+https://github.com/alloy-rs/alloy?rev=39b8695#39b869585955d95e9c64c3e1b66f16432ae4f132"
+dependencies = [
+ "alloy-eips 0.1.0 (git+https://github.com/alloy-rs/alloy?rev=39b8695)",
+ "alloy-primitives",
+ "alloy-rlp",
+ "alloy-serde 0.1.0 (git+https://github.com/alloy-rs/alloy?rev=39b8695)",
+ "c-kzg",
+ "serde",
+]
+
+[[package]]
+name = "alloy-consensus"
+version = "0.1.0"
+source = "git+https://github.com/alloy-rs/alloy?rev=77c1240#77c1240533b411ed0eb5533f94396eba8d7f6ab6"
+dependencies = [
+ "alloy-eips 0.1.0 (git+https://github.com/alloy-rs/alloy?rev=39b8695)",
+ "alloy-primitives",
+ "alloy-rlp",
+ "alloy-serde 0.1.0 (git+https://github.com/alloy-rs/alloy?rev=39b8695)",
+ "c-kzg",
+ "serde",
+]
+
+[[package]]
 name = "alloy-contract"
 version = "0.1.0"
 source = "git+https://github.com/alloy-rs/alloy?rev=77c1240#77c1240533b411ed0eb5533f94396eba8d7f6ab6"
@@ -263,7 +315,21 @@ source = "git+https://github.com/alloy-rs/alloy?rev=77c1240#77c1240533b411ed0eb5
 dependencies = [
  "alloy-primitives",
  "alloy-rlp",
- "alloy-serde",
+ "alloy-serde 0.1.0 (git+https://github.com/alloy-rs/alloy?rev=22b49ee)",
+ "c-kzg",
+ "once_cell",
+ "serde",
+]
+
+[[package]]
+name = "alloy-eips"
+version = "0.1.0"
+source = "git+https://github.com/alloy-rs/alloy?rev=39b8695#39b869585955d95e9c64c3e1b66f16432ae4f132"
+>>>>>>> 0f446fb (updated deps)
+dependencies = [
+ "alloy-primitives",
+ "alloy-rlp",
+ "alloy-serde 0.1.0 (git+https://github.com/alloy-rs/alloy?rev=39b8695)",
  "arbitrary",
  "c-kzg",
  "derive_more",
