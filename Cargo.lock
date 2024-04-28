@@ -138,7 +138,9 @@ dependencies = [
 [[package]]
 name = "alloy-chains"
 version = "0.1.17"
+version = "0.1.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fe6c2674230e94ea98767550b02853bf7024b46f784827be95acfc5f5f1a445f"
 checksum = "fe6c2674230e94ea98767550b02853bf7024b46f784827be95acfc5f5f1a445f"
 dependencies = [
  "alloy-rlp",
@@ -2842,7 +2844,9 @@ dependencies = [
 [[package]]
 name = "fiat-crypto"
 version = "0.2.8"
+version = "0.2.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "38793c55593b33412e3ae40c2c9781ffaa6f438f6f8c10f24e71846fbd7ae01e"
 checksum = "38793c55593b33412e3ae40c2c9781ffaa6f438f6f8c10f24e71846fbd7ae01e"
 
 [[package]]
@@ -3945,7 +3949,9 @@ checksum = "49f1f14873335454500d59611f1cf4a4b0f786f9ac11f4312a78e4cf2566695b"
 [[package]]
 name = "jobserver"
 version = "0.1.31"
+version = "0.1.31"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d2b099aaa34a9751c5bf0878add70444e1ed2dd73f347be99003d4577277de6e"
 checksum = "d2b099aaa34a9751c5bf0878add70444e1ed2dd73f347be99003d4577277de6e"
 dependencies = [
  "libc",
@@ -7591,7 +7597,9 @@ dependencies = [
 [[package]]
 name = "rustix"
 version = "0.38.34"
+version = "0.38.34"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "70dc5ec042f7a43c4a73241207cecc9873a06d45debb38b329f8541d85c2730f"
 checksum = "70dc5ec042f7a43c4a73241207cecc9873a06d45debb38b329f8541d85c2730f"
 dependencies = [
  "bitflags 2.5.0",
@@ -7622,6 +7630,7 @@ dependencies = [
  "log",
  "ring 0.17.8",
  "rustls-pki-types",
+ "rustls-webpki 0.102.3",
  "rustls-webpki 0.102.3",
  "subtle",
  "zeroize",
@@ -7690,7 +7699,9 @@ dependencies = [
 [[package]]
 name = "rustls-webpki"
 version = "0.102.3"
+version = "0.102.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f3bce581c0dd41bce533ce695a1437fa16a7ab5ac3ccfa99fe1a620a7885eabf"
 checksum = "f3bce581c0dd41bce533ce695a1437fa16a7ab5ac3ccfa99fe1a620a7885eabf"
 dependencies = [
  "ring 0.17.8",
@@ -8071,7 +8082,9 @@ dependencies = [
 [[package]]
 name = "signal-hook-registry"
 version = "1.4.2"
+version = "1.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a9e9e0b4211b72e7b8b6e85c807d36c212bdb33ea8587f7569562a84df5465b1"
 checksum = "a9e9e0b4211b72e7b8b6e85c807d36c212bdb33ea8587f7569562a84df5465b1"
 dependencies = [
  "libc",
@@ -9300,6 +9313,7 @@ version = "0.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4d4cc384e1e73b93bafa6fb4f1df8c41695c8a91cf9c4c64358067d15a7b6c6b"
 dependencies = [
+ "windows-sys 0.52.0",
  "windows-sys 0.52.0",
 ]
 
