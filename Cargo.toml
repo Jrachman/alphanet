@@ -69,6 +69,22 @@ reth-node-core = { git = "https://github.com/paradigmxyz/reth.git", rev = "b3bac
 reth-node-optimism = { git = "https://github.com/paradigmxyz/reth.git", rev = "b3bac08" }
 reth-primitives = { git = "https://github.com/paradigmxyz/reth.git", rev = "b3bac08" }
 reth-tracing = { git = "https://github.com/paradigmxyz/reth.git", rev = "b3bac08" }
+reth-beacon-consensus = { git = "https://github.com/paradigmxyz/reth.git", rev = "b3bac08" }
+reth-blockchain-tree = { git = "https://github.com/paradigmxyz/reth.git", rev = "b3bac08" }
+reth-db = { git = "https://github.com/paradigmxyz/reth.git", rev = "b3bac08" }
+reth-network = { git = "https://github.com/paradigmxyz/reth.git", rev = "b3bac08" }
+reth-network-api = { git = "https://github.com/paradigmxyz/reth.git", rev = "b3bac08" }
+reth-provider = { git = "https://github.com/paradigmxyz/reth.git", rev = "b3bac08" }
+reth-revm = { git = "https://github.com/paradigmxyz/reth.git", rev = "b3bac08" }
+reth-rpc-builder = { git = "https://github.com/paradigmxyz/reth.git", rev = "b3bac08" }
+reth-rpc-types = { git = "https://github.com/paradigmxyz/reth.git", rev = "b3bac08" }
+reth-rpc-types-compat = { git = "https://github.com/paradigmxyz/reth.git", rev = "b3bac08" }
+reth-tasks = { git = "https://github.com/paradigmxyz/reth.git", rev = "b3bac08" }
+reth-transaction-pool = { git = "https://github.com/paradigmxyz/reth.git", rev = "b3bac08" }
+reth-node-ethereum = { git = "https://github.com/paradigmxyz/reth.git", rev = "b3bac08" }
+reth-basic-payload-builder = { git = "https://github.com/paradigmxyz/reth.git", rev = "b3bac08" }
+reth-ethereum-payload-builder = { git = "https://github.com/paradigmxyz/reth.git", rev = "b3bac08" }
+reth-payload-builder = { git = "https://github.com/paradigmxyz/reth.git", rev = "b3bac08" }
 
 # revm
 revm = { version = "8.0.0", features = ["std", "secp256k1"], default-features = false }
