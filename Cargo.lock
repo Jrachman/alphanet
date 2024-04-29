@@ -160,7 +160,7 @@ name = "alloy-consensus"
 version = "0.1.0"
 source = "git+https://github.com/alloy-rs/alloy?rev=77c1240#77c1240533b411ed0eb5533f94396eba8d7f6ab6"
 dependencies = [
- "alloy-eips 0.1.0 (git+https://github.com/alloy-rs/alloy?rev=22b49ee)",
+ "alloy-eips",
  "alloy-primitives",
  "alloy-rlp",
  "alloy-serde",
@@ -315,21 +315,7 @@ source = "git+https://github.com/alloy-rs/alloy?rev=77c1240#77c1240533b411ed0eb5
 dependencies = [
  "alloy-primitives",
  "alloy-rlp",
- "alloy-serde 0.1.0 (git+https://github.com/alloy-rs/alloy?rev=22b49ee)",
- "c-kzg",
- "once_cell",
- "serde",
-]
-
-[[package]]
-name = "alloy-eips"
-version = "0.1.0"
-source = "git+https://github.com/alloy-rs/alloy?rev=39b8695#39b869585955d95e9c64c3e1b66f16432ae4f132"
->>>>>>> 0f446fb (updated deps)
-dependencies = [
- "alloy-primitives",
- "alloy-rlp",
- "alloy-serde 0.1.0 (git+https://github.com/alloy-rs/alloy?rev=39b8695)",
+ "alloy-serde",
  "arbitrary",
  "c-kzg",
  "derive_more",
@@ -511,30 +497,12 @@ name = "alloy-rpc-types"
 version = "0.1.0"
 source = "git+https://github.com/alloy-rs/alloy?rev=77c1240#77c1240533b411ed0eb5533f94396eba8d7f6ab6"
 dependencies = [
- "alloy-consensus 0.1.0 (git+https://github.com/alloy-rs/alloy?rev=22b49ee)",
- "alloy-eips 0.1.0 (git+https://github.com/alloy-rs/alloy?rev=22b49ee)",
- "alloy-genesis 0.1.0 (git+https://github.com/alloy-rs/alloy?rev=22b49ee)",
+ "alloy-consensus",
+ "alloy-eips",
+ "alloy-genesis",
  "alloy-primitives",
  "alloy-rlp",
- "alloy-serde 0.1.0 (git+https://github.com/alloy-rs/alloy?rev=22b49ee)",
- "alloy-sol-types",
- "itertools 0.12.1",
- "serde",
- "serde_json",
- "thiserror",
-]
-
-[[package]]
-name = "alloy-rpc-types"
-version = "0.1.0"
-source = "git+https://github.com/alloy-rs/alloy?rev=39b8695#39b869585955d95e9c64c3e1b66f16432ae4f132"
-dependencies = [
- "alloy-consensus 0.1.0 (git+https://github.com/alloy-rs/alloy?rev=39b8695)",
- "alloy-eips 0.1.0 (git+https://github.com/alloy-rs/alloy?rev=39b8695)",
- "alloy-genesis 0.1.0 (git+https://github.com/alloy-rs/alloy?rev=39b8695)",
- "alloy-primitives",
- "alloy-rlp",
- "alloy-serde 0.1.0 (git+https://github.com/alloy-rs/alloy?rev=39b8695)",
+ "alloy-serde",
  "alloy-sol-types",
  "arbitrary",
  "itertools 0.12.1",
@@ -2898,7 +2866,9 @@ checksum = "0f214dc438f977e6d4e3500aaa277f5ad94ca83fbbd9b1a15713ce2344ccc5a1"
 dependencies = [
  "event-listener 5.3.0",
  "pin-project-lite",
-=======
+]
+
+[[package]]
 name = "examples"
 version = "0.0.0"
 dependencies = [
@@ -6163,11 +6133,7 @@ dependencies = [
  "linked_hash_set",
  "lru",
  "metrics",
-<<<<<<< HEAD
  "parking_lot 0.12.2",
-=======
- "parking_lot 0.12.1",
->>>>>>> 0f446fb (updated deps)
  "reth-consensus",
  "reth-db",
  "reth-evm",
@@ -6626,10 +6592,7 @@ dependencies = [
  "bytes",
  "futures",
  "futures-util",
-<<<<<<< HEAD
  "interprocess",
-=======
->>>>>>> 0f446fb (updated deps)
  "jsonrpsee",
  "pin-project",
  "serde_json",
@@ -9494,15 +9457,9 @@ checksum = "ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6"
 
 [[package]]
 name = "winapi-util"
-<<<<<<< HEAD
 version = "0.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4d4cc384e1e73b93bafa6fb4f1df8c41695c8a91cf9c4c64358067d15a7b6c6b"
-=======
-version = "0.1.7"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "134306a13c5647ad6453e8deaec55d3a44d6021970129e6188735e74bf546697"
->>>>>>> 0f446fb (updated deps)
 dependencies = [
  "windows-sys 0.52.0",
  "windows-sys 0.52.0",
