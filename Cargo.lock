@@ -2659,6 +2659,7 @@ dependencies = [
 ]
 
 [[package]]
+<<<<<<< HEAD
 name = "event-listener"
 version = "4.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2698,6 +2699,35 @@ checksum = "0f214dc438f977e6d4e3500aaa277f5ad94ca83fbbd9b1a15713ce2344ccc5a1"
 dependencies = [
  "event-listener 5.3.0",
  "pin-project-lite",
+=======
+name = "examples"
+version = "0.0.0"
+dependencies = [
+ "alphanet-instructions",
+ "alphanet-precompile",
+ "async-trait",
+ "eyre",
+ "futures-util",
+ "reth",
+ "reth-basic-payload-builder",
+ "reth-ethereum-payload-builder",
+ "reth-node-api",
+ "reth-node-core",
+ "reth-node-ethereum",
+ "reth-node-optimism",
+ "reth-payload-builder",
+ "reth-primitives",
+ "reth-rpc-types",
+ "reth-tracing",
+ "revm",
+ "revm-interpreter",
+ "revm-precompile",
+ "revm-primitives",
+ "serde",
+ "serde_json",
+ "thiserror",
+ "tokio",
+>>>>>>> c5bda07 (updated cargo.toml to include dependencies for examples, reverted alphanet-genesis file back to original form)
 ]
 
 [[package]]
