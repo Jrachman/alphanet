@@ -4,7 +4,7 @@
 #![cfg_attr(not(test), warn(unused_crate_dependencies))]
 
 use reth::{
-    args::DevArgs, builder::NodeBuilder, tasks::TaskManager
+    args::DevArgs, builder::NodeBuilder, rpc::builder::{RethRpcModule, RpcModuleSelection}, tasks::TaskManager
 };
 use reth_node_core::{args::RpcServerArgs, node_config::NodeConfig};
 use reth_node_optimism::{args::RollupArgs, OptimismNode};
@@ -31,6 +31,13 @@ async fn main() -> eyre::Result<()> {
             http_addr: IpAddr::V4(Ipv4Addr::new(0, 0, 0, 0)),
             ws_addr: IpAddr::V4(Ipv4Addr::new(0, 0, 0, 0)),
             auth_addr: IpAddr::V4(Ipv4Addr::new(0, 0, 0, 0)),
+            http_api: Some(RpcModuleSelection::Selection([
+                RethRpcModule::Debug, 
+                RethRpcModule::Eth, 
+                RethRpcModule::Net, 
+                RethRpcModule::Trace, 
+                RethRpcModule::Web3
+            ].to_vec())),
             ..RpcServerArgs::default().with_http().with_ws()
         })
         .with_chain(custom_chain());
