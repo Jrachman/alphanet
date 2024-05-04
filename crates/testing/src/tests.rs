@@ -2,6 +2,7 @@ use crate::{test_suite::TestSuite, wallet::Wallet};
 use alloy::{
     providers::{Provider, ProviderBuilder},
     sol,
+    sol_types::SolValue,
 };
 use alloy_network::EthereumSigner;
 use alphanet_node::node::AlphaNetNode;
@@ -11,7 +12,6 @@ use reth::{
     tasks::TaskManager,
 };
 use reth_node_core::{args::RpcServerArgs, node_config::NodeConfig};
-use reth_node_optimism::{args::RollupArgs, OptimismNode};
 use reth_primitives::{keccak256, Address, BlockId, DEV, U256};
 use url::Url;
 
@@ -45,8 +45,7 @@ async fn test_eip3074_integration() {
         .with_rpc(RpcServerArgs::default().with_unused_ports().with_http());
     let NodeHandle { node, .. } = NodeBuilder::new(node_config)
         .testing_node(tasks.executor())
-        .with_types(AlphaNetNode::default())
-        .with_components(OptimismNode::components(RollupArgs::default()))
+        .node(AlphaNetNode::default())
         .launch()
         .await
         .unwrap();
@@ -56,8 +55,7 @@ async fn test_eip3074_integration() {
     let provider = ProviderBuilder::new()
         .with_recommended_fillers()
         .signer(deployer)
-        .on_http(Url::parse(&rpc_url).unwrap())
-        .unwrap();
+        .on_http(Url::parse(&rpc_url).unwrap());
     let base_fee = provider.get_gas_price().await.unwrap();
 
     // Deploy sender recorder contract.
@@ -86,25 +84,18 @@ async fn test_eip3074_integration() {
     let signer_nonce =
         provider.get_transaction_count(signer_address, BlockId::latest()).await.unwrap();
 
-    // commit, digest and signature.
-    let commit = keccak256("Some unique commit data".as_bytes());
-    let GasSponsorInvoker::getDigestReturn { digest } =
-        invoker.getDigest(commit, U256::from(signer_nonce)).call().await.unwrap();
-    let (v, r, s) = signer_wallet.sign_hash(digest).await;
-
     // abi encoded method call.
     let binding = sender_recorder.recordSender();
     let data = reth_primitives::Bytes(binding.calldata().0.clone());
 
-    let builder = invoker.sponsorCall(
-        signer_address,
-        commit,
-        v,
-        r.into(),
-        s.into(),
-        sender_recorder_address,
-        data,
-    );
+    // commit, digest and signature.
+    let commit = keccak256((sender_recorder_address, data.clone()).abi_encode_sequence());
+    let GasSponsorInvoker::getDigestReturn { digest } =
+        invoker.getDigest(commit, U256::from(signer_nonce)).call().await.unwrap();
+    let (v, r, s) = signer_wallet.sign_hash(digest).await;
+
+    let builder =
+        invoker.sponsorCall(signer_address, v, r.into(), s.into(), sender_recorder_address, data);
     let estimate = builder.estimate_gas().await.unwrap();
     let receipt = builder
         .gas(estimate)
