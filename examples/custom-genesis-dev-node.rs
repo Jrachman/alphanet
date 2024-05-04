@@ -7,8 +7,8 @@ use reth::{
     args::DevArgs, builder::NodeBuilder, rpc::builder::{RethRpcModule, RpcModuleSelection}, tasks::TaskManager
 };
 use reth_node_core::{args::RpcServerArgs, node_config::NodeConfig};
-use reth_node_optimism::{args::RollupArgs, OptimismNode};
-use reth_primitives::{ChainSpec, ForkCondition, ForkTimestamps, Genesis, GenesisAccount, Hardfork};
+use reth_node_optimism::args::RollupArgs;
+use reth_primitives::{ChainSpec, ForkCondition, Genesis, GenesisAccount, Hardfork};
 use reth_tracing::{RethTracer, Tracer};
 use revm_primitives::{address, U256};
 use std::{net::{IpAddr, Ipv4Addr}, sync::Arc, time::Duration};
@@ -44,8 +44,7 @@ async fn main() -> eyre::Result<()> {
 
     let handle = NodeBuilder::new(node_config)
         .testing_node(tasks.executor())
-        .with_types(AlphaNetNode::default())
-        .with_components(OptimismNode::components(RollupArgs::default()))
+        .node(AlphaNetNode::new(RollupArgs::default()))
         .launch()
         .await
         .unwrap();
@@ -69,11 +68,6 @@ fn custom_chain() -> Arc<ChainSpec> {
         },
     );
     let mut chainspec: ChainSpec = ChainSpec {
-        fork_timestamps: ForkTimestamps::default()
-            .shanghai(1699981200)
-            .canyon(1699981200)
-            .cancun(1708534800)
-            .ecotone(1708534800),
         ..genesis.into()
     };
     chainspec.hardforks.insert(Hardfork::Bedrock, ForkCondition::Block(0));
