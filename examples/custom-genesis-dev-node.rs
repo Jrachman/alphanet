@@ -7,7 +7,6 @@ use reth::{
     args::DevArgs, builder::NodeBuilder, rpc::builder::{RethRpcModule, RpcModuleSelection}, tasks::TaskManager
 };
 use reth_node_core::{args::RpcServerArgs, node_config::NodeConfig};
-use reth_node_optimism::args::RollupArgs;
 use reth_primitives::DEV;
 use reth_tracing::{RethTracer, Tracer};
 use std::{net::{IpAddr, Ipv4Addr}, time::Duration};

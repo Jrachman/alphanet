@@ -2722,13 +2722,11 @@ version = "0.0.0"
 dependencies = [
  "alphanet-node",
  "eyre",
+ "once_cell",
  "reth",
  "reth-node-core",
- "reth-node-optimism",
  "reth-primitives",
  "reth-tracing",
- "revm-primitives",
- "serde_json",
  "tokio",
 ]
 
