@@ -13,20 +13,18 @@ categories.workspace = true
 alphanet-node.workspace = true
 reth.workspace = true
 reth-node-optimism.workspace = true
-revm-primitives.workspace = true
 reth-primitives.workspace = true
 reth-node-core.workspace = true
 reth-tracing.workspace = true
 
 eyre.workspace = true
 tokio.workspace = true
-serde_json.workspace = true
+once_cell = "1.19.0"
 
 [features]
 default = [
   "reth/optimism",
-  "reth-node-optimism/optimism",
-  "revm-primitives/optimism",
+  "reth-node-optimism/optimism"
 ]
 
 [lints]
