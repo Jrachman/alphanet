@@ -4,7 +4,7 @@
 #![cfg_attr(not(test), warn(unused_crate_dependencies))]
 
 use reth::{
-    args::DevArgs, builder::NodeBuilder, rpc::builder::{RethRpcModule, RpcModuleSelection}, tasks::TaskManager
+    args::{DebugArgs, DevArgs}, builder::NodeBuilder, rpc::builder::{RethRpcModule, RpcModuleSelection}, tasks::TaskManager
 };
 use reth_node_core::{args::RpcServerArgs, node_config::NodeConfig};
 use reth_primitives::{address, GenesisAccount, DEV, U256};
@@ -36,7 +36,11 @@ async fn main() -> eyre::Result<()> {
         .with_dev(DevArgs {
             dev: true, 
             block_max_transactions: None,
-            block_time: Some(std::time::Duration::from_secs(3))
+            block_time: Some(std::time::Duration::from_secs(10))
+        })
+        .with_debug(DebugArgs {
+            max_block: Some(u64::MAX),
+            ..DebugArgs::default()
         })
         .with_rpc(RpcServerArgs {
             http_addr: IpAddr::V4(Ipv4Addr::new(0, 0, 0, 0)),
